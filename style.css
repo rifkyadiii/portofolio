@@ -22,3 +22,91 @@ section {
 #gallery .row > * {
   padding: 0%;
 }
+
+.skills-box {
+  background-color: #0c6efd;
+  border-radius: 10px;
+  height: 500px;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+/* .skills-box::before {
+  content: "MY";
+  position: absolute;
+  color: #fff;
+  font-size: 4em;
+  font-weight: bold;
+  font-style: italic;
+  top: 45px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.skills-box:hover::before {
+  opacity: 0.2;
+}
+
+.skills-box::after {
+  content: "SKILLS";
+  position: absolute;
+  color: #fff;
+  font-size: 5em;
+  font-weight: bold;
+  font-style: italic;
+  top: 340px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.skills-box:hover::after {
+  opacity: 0.2;
+} */
+
+.skills-name {
+  color: #fff;
+  text-align: center;
+  font-size: 5em;
+  opacity: 0;
+  transition: 0.5s;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transform: translate3d(0,0,50px);
+}
+
+.skills-box:hover .skills-name {
+  top: 30px;
+  opacity: 1;
+}
+
+.skills-detail-btn {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate3d(-50%, 0, 50px);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.skills-box:hover .skills-detail-btn {
+  opacity: 1;
+  bottom: 30px;
+}
+
+.skills-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 100px);
+  max-width: 350px;
+  transition: 0.5s;
+}
+
+.skills-box:hover .skills-img {
+  transform: translate3d(-50%, -50%, 100px) scale(1.2) rotate(3deg);
+}

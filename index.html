@@ -47,9 +47,34 @@
 
     <!-- JUMBOTRON -->
     <section class="jumbotron text-center">
-      <img src="img/rifky.jpg" alt="Rifky Adi" width="200" class="rounded-circle img-thumbnail" />
+      <img src="img/rifky.jpg" alt="Rifky Adi" width="200" class="rounded-circle img-thumbnail profile-img" />
       <h1 class="display-4">Rifky Adi</h1>
       <p class="lead"></p>
+      <section id="my-skills">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-6 col-lg-3 mb-5">
+            <div class="skills-box">
+              <h4 class="skills-name">HTML</h4>
+              <img src="img/my-skills/html.png" alt="HTML" class="skills-img" />
+              <a href="#" class="btn btn-light skills-detail-btn">Show Details</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-5">
+            <div class="skills-box">
+              <h4 class="skills-name">CSS</h4>
+              <img src="img/my-skills/css.png" alt="CSS" class="skills-img" />
+              <a href="#" class="btn btn-light skills-detail-btn">Show Details</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-5">
+            <div class="skills-box">
+              <h4 class="skills-name">JS</h4>
+              <img src="img/my-skills/js.png" alt="Javascript" class="skills-img" />
+              <a href="#" class="btn btn-light skills-detail-btn">Show Details</a>
+            </div>
+          </div>
+        </div>
+      </section>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -293,17 +318,34 @@
     <script>
       gsap.registerPlugin(TextPlugin);
 
-      gsap.from('.jumbotron img', {
-        duration: 1, rotateY: 360, opacity: 0
+      gsap.from(".jumbotron .profile-img", {
+        duration: 1,
+        rotateY: 360,
+        opacity: 0,
       });
 
-      gsap.from('.display-4', {
-        duration: 1.5, x: '50%', opacity: 0, delay: 0.5, ease: 'back'
+      gsap.from(".display-4", {
+        duration: 1.5,
+        x: "50%",
+        opacity: 0,
+        delay: 0.5,
+        ease: "back",
       });
 
-      gsap.to('.lead', {
-        duration: 2, delay: 1.5, text: 'Student College | Fullstack Developer'
-      })
+      gsap.to(".lead", {
+        duration: 2,
+        delay: 1.5,
+        text: "Student College | Fullstack Developer",
+      });
+    </script>
+
+    <!-- TILT JS -->
+    <script type="text/javascript" src="js/tilt/vanilla-tilt.min.js"></script>
+    <script>
+      VanillaTilt.init(document.querySelectorAll(".skills-box"), {
+        max: 25,
+        speed: 400,
+      });
     </script>
 
     <!-- SUBMIT TO GOOGLE SHEETS -->
@@ -312,7 +354,7 @@
       const form = document.forms["submit-to-google-sheet"];
 
       const btnSubmit = document.querySelector(".btn-submit");
-      const btnLoading = document.querySelector(".btn-loading");
+      const btnLoading = document=.querySelector(".btn-loading");
       const notificationSuccess = document.querySelector(".notification-success");
       const notificationFailed = document.querySelector(".notification-failed");
 
